@@ -1,0 +1,47 @@
+format = """
+[╭─](bold white)$time$cmd_duration$username$hostname$directory$git_branch$git_status$python
+[╰─➤](bold green) """
+
+[time]
+disabled = false
+style = "bold bright-black"
+time_format = "%Y-%m-%d %H:%M:%S"
+format = " [$time]($style)"
+
+[cmd_duration]
+min_time = 500  # 超過 0.5 秒才顯示
+format = " took [$duration]($style)"
+style = "bold italic bright-magenta"
+
+
+[username]
+show_always = true
+style_user = "bold blue"
+format = " (blue)[$user]($style)(blue)"
+
+[hostname]
+ssh_only = false
+style = "bold yellow"
+format = "[@$hostname]($style) "
+
+[directory]
+style = "bold cyan"
+format = "[$path]($style) "
+
+[git_branch]
+symbol = " "
+style = "bold green"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "yellow"
+format = "[$all_status]($style) "
+
+[python]
+symbol = "🐍 "
+style = "bold red"
+format = "[$symbol$version]($style) "
+
+[character]
+success_symbol = "[➤](bold green)"
+error_symbol = "[✘](bold red)"
